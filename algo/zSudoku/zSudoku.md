@@ -35,7 +35,7 @@ Pour le niveau le plus simple, contentez-vous de résoudre la grille de la faço
 
 ### Niveau 2
 
-Ici, nous allons un peu corser les choses. Le but sera maintenant de résoudre le sudoku par une méthode plus efficace, impliquant le backtracking. Yoch, membre habitué de ce forum, a écrit un tutoriel à ce sujet. Le but est donc de lire et comprendre la méthode, mais pas les codes sources. Le but est de les récrire vous-mêmes, sans lire ce qui existe déjà.
+Ici, nous allons un peu corser les choses. Le but sera maintenant de résoudre le sudoku par une méthode plus efficace, impliquant par exemple backtracking. Le but est donc de lire et comprendre la méthode, mais pas les codes sources. Le but est de les récrire vous-mêmes, sans lire ce qui existe déjà.
 
 Vous pouvez également vous renseigner au sujet du backtracking sur Wikipédia, ou partout ailleurs sur le web. :)
 
@@ -48,3 +48,7 @@ Pour ce dernier niveau, il vous est demandé de faire une résolution pas à pas
 Les Sudokus ont déjà fait l'objet de nombreux exercices, mais j'ose espérer que certains d'entre vous ne l'auront jamais codé. :)
 
 Bon courage à tous !
+
+## Annexe
+
+Le fichier `top1465.txt` (source: http://staffhome.ecm.uwa.edu.au/~00013890/sudoku17) contient une liste de grilles reputées difficiles pour les humains.
