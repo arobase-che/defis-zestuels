@@ -1,4 +1,4 @@
-# Un calculateur de masse molaire #
+# zMolarMass #
 
 Aujourd'hui l'exercice sera de réaliser un **calculateur de masse molaire**. Cette notion de chimie n'est abordée qu'en classe de seconde générale, mais vous devriez vous en sortir même si vous êtes au collège, du moment que vous avez une bonne connaissance des molécules et des atomes.
 
