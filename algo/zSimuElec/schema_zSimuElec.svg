@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="schema_ZSimuElec.svg"
+   sodipodi:docname="schema_zSimuElec.svg"
    inkscape:export-filename="/home/arnaud/Bureau/Limbo/Zeste de Savoir/defis-zestuels/algo/zSimuElec/graphe_circuit_1.png"
    inkscape:export-xdpi="99"
    inkscape:export-ydpi="99">
@@ -455,9 +455,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7071068"
-     inkscape:cx="-43.627854"
-     inkscape:cy="144.11696"
+     inkscape:zoom="2.0000001"
+     inkscape:cx="248.21017"
+     inkscape:cy="201.67399"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -1861,5 +1861,16 @@
          x="82.442451"
          id="tspan5150"
          sodipodi:role="line">1</tspan></text>
+    <text
+       id="text4592"
+       y="849.11218"
+       x="318.12006"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:'sans serif';-inkscape-font-specification:'sans serif';text-align:center;writing-mode:lr-tb;text-anchor:middle;opacity:1;fill:#d41e00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:serif;-inkscape-font-specification:'serif Italic';fill:#d41e00;fill-opacity:1"
+         y="849.11218"
+         x="318.12006"
+         id="tspan4594"
+         sodipodi:role="line">e</tspan></text>
   </g>
 </svg>
