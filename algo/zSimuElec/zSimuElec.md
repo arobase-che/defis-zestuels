@@ -4,7 +4,7 @@ Thèmes: théorie des graphes, algèbre linéaire.
 
 Les logiciels de simulation de circuits électriques permettent de déterminer les valeurs des tensions et courants dans un circuit sans avoir à faire de calculs laborieux. C'est très pratique !
 
-**Cet exercice a pour but de vous entraîner à la manipulation de graphes et de matrices en vous guidant dans la réalisation d'un petit simulateur de circuits électriques.**
+**Ce problème a pour but de vous entraîner à la manipulation de graphes et de matrices en vous guidant dans la réalisation d'un petit simulateur de circuits électriques.**
 
 ## Partie 1 : Premiers pas
 
@@ -23,5 +23,4 @@ Voici quelques exemples :
 * la branche a est définie par le noeud de départ 1, le noeud d'arrivée 2, la résistance 0.5 kΩ, et la tension 0 V ;
 * la branche b est définie par le noeud de départ 1, le noeud d'arrivée 0, la résistance 0 Ω et la tension 50 V.
 
-
-Dans ce formalisme, un circuit n'est rien d'autre qu'une liste de branches.
+Dans ce formalisme, un circuit n'est rien d'autre qu'une liste de branches ainsi définies. Dans le jargon des logiciels de simulation, on parle de *netlist*.
