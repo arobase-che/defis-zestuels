@@ -86,4 +86,17 @@ Dans la suite du problème, nous aurons besoin de calculer des *matrices d'incid
 
 La matrice d'incidence réduite est liée à la notion de référence de potentiel du circuit électrique : le nœud retiré de la matrice d'incidence correspondra à la masse.
 
+Voici la matrice d'incidence réduite du circuit d'exemple pour le nœud 0.
+
+```
+           a    b    c    d    e    f    g    h    i    j
+		  
+Noeud 1   -1   -1    0    0    0    0    0    0    0   +1
+Noeud 2   +1    0   -1    0    0    0    0    0    0    0
+Noeud 3    0    0   +1   -1   -1    0    0   +1    0    0
+Noeud 4    0    0    0    0    0   -1   +1    0    0   -1
+Noeud 5    0    0    0    0   +1   +1    0    0    0    0
+Noeud 6    0    0    0   +1    0    0   -1    0   +1    0
+```
+
 **Exercice (facile) :** Écrire un programme prenant pour argument une matrice d'incidence et un nœud et retournant la matrice d'incidence réduite correspondante.
