@@ -24,3 +24,66 @@ Voici quelques exemples :
 * la branche b est définie par le noeud de départ 1, le noeud d'arrivée 0, la résistance 0 Ω et la tension 50 V.
 
 Dans ce formalisme, un circuit n'est rien d'autre qu'une liste de branches ainsi définies. Dans le jargon des logiciels de simulation, on parle de *netlist*.
+
+## Partie 2 : Manipulation de *netlists*
+
+Les *netlists* de ce problème sont fournies sous forme de fichiers texte. Chaque ligne représente une branche et est constituée du noeud de départ, du noeud d'arrivée, de la tension et de la résistance, séparés par des  points-virgules. Les noeuds de départ et d'arrivée sont des entiers. Les tensions et les résistances sont des nombres à virgule. La structure de chaque ligne est donc la suivante :
+
+```
+<no_noeud_départ>; <no_noeud_arrivée>; <tension>; <résistance>
+...
+```
+
+À titre d'exemple, voici la *netlist* du circuit de la partie 1.
+
+```
+1;2;0;500
+1;0;50;0
+2;3;0;1000
+3;6;0;5000
+3;5;0;1000
+4;5;0;20000
+6;4;0;1000
+0;3;0;10000
+0;6;0;2000
+4;1;0;10000
+```
+
+**Exercice (facile) :** Écrire un programme qui lit une *netlist* et donne :
+
+* le nombre de branches,
+* le nombre de générateurs (tension non nulle),
+* le nombre de résistances (résistance non nulle),
+* le nombre de nœuds.
+
+## Partie 3 : Matrice d'incidence et matrice d'incidence réduite
+
+Bien qu'une *netlist* soit une description complète d'un circuit électrique, elle ne nous sera pas très utile telle quelle pour déterminer les courants et tensions dans le circuit. Nous aurons notamment besoin d'une *matrice d'incidence*. Pour un circuit comportant N nœuds et B branches, cette matrice comporte N lignes et N colonnes : chaque ligne correspond donc à un nœud et chaque colonne à une branche. Le coefficient de la ligne n et de la conne b vaut :
+
+* +1, si la branche b arrive sur le nœud n,
+* -1, si la branche b part du nœud n,
+*  0, si la branche b n'arrive ni part du nœud n.
+
+Une matrice d'incidence contient toute la topologie du graphe, c'est-à-dire la manière dont sont connectées les branches, sans s'intéresser aux composants. Elle peut être utilisée pour écrire la loi des nœuds, une des lois fondamentales des circuits électriques ; nous en reparlerons plus loin.
+
+La matrice d'incidence du circuit de la partie 1 est montrée ci-dessous.
+
+```
+           a    b    c    d    e    f    g    h    i    j
+		  
+Noeud 0    0   +1    0    0    0    0    0   -1   -1    0
+Noeud 1   -1   -1    0    0    0    0    0    0    0   +1
+Noeud 2   +1    0   -1    0    0    0    0    0    0    0
+Noeud 3    0    0   +1   -1   -1    0    0   +1    0    0
+Noeud 4    0    0    0    0    0   -1   +1    0    0   -1
+Noeud 5    0    0    0    0   +1   +1    0    0    0    0
+Noeud 6    0    0    0   +1    0    0   -1    0   +1    0
+```
+
+**Exercice (facile) :** Écrire un programme lisant une *netlist* et donnant la matrice d'incidence correspondante.
+
+Dans la suite du problème, nous aurons besoin de calculer des *matrices d'incidence réduites*. Pour une matrice d'incidence et un nœud donné, on obtient la matrice d'incidence réduite associée en enlevant la ligne correspondant à ce nœud, tout simplement.
+
+La matrice d'incidence réduite est liée à la notion de référence de potentiel du circuit électrique : le nœud retiré de la matrice d'incidence correspondra à la masse.
+
+**Exercice (facile) :** Écrire un programme prenant pour argument une matrice d'incidence et un nœud et retournant la matrice d'incidence réduite correspondante.
