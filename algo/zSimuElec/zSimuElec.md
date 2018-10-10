@@ -105,8 +105,35 @@ Noeud 6    0    0    0   +1    0    0   -1    0   +1    0
 
 En plus de la matrice d'incidence, nous aurons besoin d'une *matrice de mailles indépendantes* pour la résolution du circuit. Avant de parler de matrices cependant, il nous faut parler de mailles et surtout de mailles indépendantes.
 
-Dans un circuit électrique, une maille est une boucle orientée qui part d'un noeud et revient sur ce même nœud sans passer deux fois par la même branche. Cette notion est analogue à la notion de cycle élémentaire de la théorie des graphes. Ainsi, trouver uen maille dans un circuit est équivalent à trouver un cycle élémentaire dans le graphe du circuit.
+Dans un circuit électrique, une maille est une boucle orientée qui part d'un noeud et revient sur ce même nœud sans passer deux fois par la même branche. Cette notion est analogue à la notion de cycle élémentaire de la théorie des graphes. Ainsi, trouver une maille dans un circuit est équivalent à trouver un cycle élémentaire dans le graphe du circuit.
 
 La figure ci-dessous montre différentes mailles du circuit d'exemple.
 
 ![Maille du circuit d'exemple](mailles_circuit_1.png)
+
+Une maille peut par exemple être représentée par une liste de branches, formant un sous-ensemble des branches du circuit complet.
+
+**Exercice (moyen) :** Écrire un programme qui détermine si une liste de branche forme une maille d'un circuit donné. Le circuit et la branche peuvent par exemple être donnés sous forme de *netlist*.
+
+Une représentation des mailles plus utile pour le calcul qu'une simple liste est ce qu'on appelle *une matrice de mailles*, car elle permet d'écrire les lois des mailles du circuit, qui font partie des lois fondamentales des circuits électriques. Une matrice de maille est consistuée de M lignes, qui représentent autant de mailles, et de B colonnes, B étant le nombre total de branche du circuit. Pour une maille α et une branche b, le coefficient à la ligne et la colonne correspondantes vaudra :
+
+*  0 si la maille ne contient pas la branche,
+* +1 si la maille suit la branche dans le même sens,
+* -1 si la maille suit la branche dans le sens opposé.
+
+Voici un exemple de matrice de mailles pour le circuit d'exemple, à partir des mailles montrée dans la figure vue plus tôt.
+
+
+```
+            a    b    c    d    e    f    g    h    i    j
+		  
+Maille α   -1   +1   -1    0    0    0    0   +1    0    0
+Maille β    0    0    0   +1    0    0    0   +1   -1    0
+Maille γ   -1    0   -1   -1    0    0   -1    0    0   -1
+Maille δ   +1    0   +1    0   +1   -1    0    0    0   +1
+
+```
+
+Aucune des mailles de la matrice ci-dessus ne peuvent pas être obtenues par combinaison linéaire des autres mailles : on dit que les mailles sont indépendantes.
+
+**Exercice (moyen) :** Écrire un programme qui, à partir d'une matrice de mailles donnée, indique s'il s'agit de mailles indépendantes ou non.
