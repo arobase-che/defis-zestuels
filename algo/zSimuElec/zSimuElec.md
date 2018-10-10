@@ -64,7 +64,7 @@ Bien qu'une *netlist* soit une description complète d'un circuit électrique, e
 * -1, si la branche b part du nœud n,
 *  0, si la branche b n'arrive ni part du nœud n.
 
-Une matrice d'incidence contient toute la topologie du graphe, c'est-à-dire la manière dont sont connectées les branches, sans s'intéresser aux composants. Elle peut être utilisée pour écrire la loi des nœuds, une des lois fondamentales des circuits électriques ; nous en reparlerons plus loin.
+Une matrice d'incidence contient toute la topologie du graphe, c'est-à-dire la manière dont sont connectées les branches, sans s'intéresser aux composants. Elle peut être utilisée pour écrire les lois des nœuds du circuit, qui font partie des équations nécessaires à sa résolution ; nous en reparlerons plus loin.
 
 La matrice d'incidence du circuit de la partie 1 est montrée ci-dessous.
 
@@ -100,3 +100,4 @@ Noeud 6    0    0    0   +1    0    0   -1    0   +1    0
 ```
 
 **Exercice (facile) :** Écrire un programme prenant pour argument une matrice d'incidence et un nœud et retournant la matrice d'incidence réduite correspondante.
+
