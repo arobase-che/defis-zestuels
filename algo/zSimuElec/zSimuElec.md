@@ -101,3 +101,12 @@ Noeud 6    0    0    0   +1    0    0   -1    0   +1    0
 
 **Exercice (facile) :** Écrire un programme prenant pour argument une matrice d'incidence et un nœud et retournant la matrice d'incidence réduite correspondante.
 
+## Partie 4 : Matrices de mailles et mailles indépendantes
+
+En plus de la matrice d'incidence, nous aurons besoin d'une *matrice de mailles indépendantes* pour la résolution du circuit. Avant de parler de matrices cependant, il nous faut parler de mailles et surtout de mailles indépendantes.
+
+Dans un circuit électrique, une maille est une boucle orientée qui part d'un noeud et revient sur ce même nœud sans passer deux fois par la même branche. Cette notion est analogue à la notion de cycle élémentaire de la théorie des graphes. Ainsi, trouver uen maille dans un circuit est équivalent à trouver un cycle élémentaire dans le graphe du circuit.
+
+La figure ci-dessous montre différentes mailles du circuit d'exemple.
+
+![Maille du circuit d'exemple](mailles_circuit_1.png)
