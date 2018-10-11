@@ -137,3 +137,17 @@ Maille δ   +1    0   +1    0   +1   -1    0    0    0   +1
 Aucune des mailles de la matrice ci-dessus ne peuvent pas être obtenues par combinaison linéaire des autres mailles : on dit que les mailles sont indépendantes.
 
 **Exercice (moyen) :** Écrire un programme qui, à partir d'une matrice de mailles donnée, indique s'il s'agit de mailles indépendantes ou non.
+
+Pour déterminer tous les courants et toutes les tensions dans le circuit, il nous faudra suffisamment d'équations indépendantes, dont une partie seront des lois des mailles. Ainsi, il est important de trouver un système de mailles indépendantes tel qu'il ne soit pas possible d'ajouter de mailles sans que les mailles du système deviennent dépendantes.
+
+Il est possible de montrer que dans un circuit avec N nœuds et B branches, un système de mailles indépendantes aura au plus B - N + 1 mailles, qu'il est possible de trouver de manière systématique à l'aide d'un algorithme qui travaille sur le graphe du circuit.
+
+Cet algorithme est le suivant :
+
+* choisir un nœud arbitrairement dans le graphe du circuit ;
+* effectuer un parcours en profondeur du graphe afin de construire un *arbre couvrant* (c'est-à-dire un arbre contenant tous les nœuds du graphe) ;
+* prendre une branche qui n'est pas dans l'arbre (un *chaînon*)  et l'ajouter à l'arbre couvrant, puis identifier la maille ainsi crée ;
+* recommencer pour tous les autres chaînons afin d'identifier toutes les mailles.
+
+**Exercice (difficile) :** Écrire un programme qui, à paritr d'une matrice d'incidence donnée, construit une matrice de B - N + 1 mailles indépendantes.
+
