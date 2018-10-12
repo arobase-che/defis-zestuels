@@ -146,7 +146,7 @@ Cet algorithme est le suivant :
 
 * choisir un nœud arbitrairement dans le graphe du circuit ;
 * effectuer un parcours en profondeur du graphe afin de construire un *arbre couvrant* (c'est-à-dire un arbre contenant tous les nœuds du graphe) ;
-* prendre une branche qui n'est pas dans l'arbre (un *chaînon*)  et l'ajouter à l'arbre couvrant, puis identifier la maille ainsi crée ;
+* prendre une branche qui n'est pas dans l'arbre (un *chaînon*)  et l'ajouter à l'arbre couvrant, puis identifier la maille ainsi créée ;
 * recommencer pour tous les autres chaînons afin d'identifier toutes les mailles.
 
 ![Arbre couvrant et mailles indépendantes du circuit d'exemple](arbre_couvrant_circuit_1.png)

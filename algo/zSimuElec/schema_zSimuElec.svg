@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="schema_zSimuElec.svg"
-   inkscape:export-filename="/home/arnaud/Bureau/Limbo/Zeste de Savoir/defis-zestuels/algo/zSimuElec/mailles_circuit_1.png"
+   inkscape:export-filename="/home/arnaud/Bureau/Limbo/Zeste de Savoir/defis-zestuels/algo/zSimuElec/arbre_couvrant_circuit_1.png"
    inkscape:export-xdpi="99"
    inkscape:export-ydpi="99">
   <defs
@@ -485,9 +485,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.0000001"
-     inkscape:cx="316.85446"
-     inkscape:cy="221.09728"
+     inkscape:zoom="1.0000001"
+     inkscape:cx="323.55522"
+     inkscape:cy="184.34012"
      inkscape:document-units="px"
      inkscape:current-layer="layer3"
      showgrid="true"
