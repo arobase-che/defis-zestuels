@@ -149,7 +149,7 @@ Cet algorithme est le suivant :
 * prendre une branche qui n'est pas dans l'arbre (un *chaînon*)  et l'ajouter à l'arbre couvrant, puis identifier la maille ainsi crée ;
 * recommencer pour tous les autres chaînons afin d'identifier toutes les mailles.
 
-[TODO : exemple d'arbre couvrant obtenu par un tel algo et mailles associées]
+![Arbre couvrant et mailles indépendantes du circuit d'exemple](arbre_couvrant_circuit_1.png)
 
 **Exercice (difficile) :** Écrire un programme qui, à partir d'une matrice d'incidence donnée, construit une matrice de B - N + 1 mailles indépendantes.
 
