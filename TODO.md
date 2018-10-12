@@ -19,11 +19,8 @@ L'import des exercices
 
   - [[Défi #1 : Chimie pour tous]](http://fr.openclassrooms.com/forum/sujet/fait-defis-1-zmol-la-chimie-pour-tous-73164) : un petit parseur pour calculer la masse molaire d'un groupe d'atomes.
   - [[Défi #2 : le jeu de la vie]](http://fr.openclassrooms.com/forum/sujet/fait-defis-2-le-jeu-de-la-vie-79892) : à l'aide d'une bibliothèque graphique, faire un petit jeu de la vie.
-  - [[Défi #3 : sudokus en folie]](https://openclassrooms.com/forum/sujet/fait-defis-3-des-sudokus-en-folie-29452)
   - [[Défi #4 : faisons une vraie calculette]](http://fr.openclassrooms.com/forum/sujet/fait-defis-4-faisons-une-vraie-calculette-88111) : faire un petit parseur permettant d'évaluer une expression arithmétique, avec possibilité d'ajouter les variables, les fonctions, voire faire un vrai petit langage.
   - [[Défi #5 : un chronomètre]](http://fr.openclassrooms.com/forum/sujet/fait-defis-5-un-chronometre-77081) : comme son nom l'indique, faire un bête chronomètre.
-  - [[Défi #6 : Dessinez la courbe du dragon]](http://fr.openclassrooms.com/forum/sujet/fait-defis-6-dessinez-la-courbe-du-dragon-77056) : avec une bibliothèque graphique, dessiner une fractale célèbre appelée la **courbe du dragon**.
-  - [[Défi #7 : un correcteur orthographique efficace]](http://fr.openclassrooms.com/forum/sujet/fait-defis-7-un-correcteur-orthographique-efficace-94015) : et pourtant c'est plus compliqué qu'il n'y parait.
   - [[Défi #8 : tout en base 64]](http://fr.openclassrooms.com/forum/sujet/defis-8-tout-en-base64-19054?page=1) : Base64 est un codage permet de représenter une suite de bit quelconque avec seulement 65 caractères, le but est donc de l'implémenter.
   - [[Défi #9 : la recherche en génétique]](http://fr.openclassrooms.com/forum/sujet/fait-defis-9-la-recherche-en-genetique-17658) : coder un programme capable de retrouver une sous-chaîne dans un texte.
   - [[Défi #12 : zdessin]](http://fr.openclassrooms.com/forum/sujet/defis-12-zdessin-30177) : créer son propre format de .bmp avec une petite bibliothèque pour le manipuler.
@@ -113,34 +110,34 @@ pas du langage d'origine.
 
 Ces exercices sont pour l'instant en Python :
 
- - Anagramme
- - Cache
- - Chemin-dico
- - Connexité
- - Dix-plus-grand
- - Éxecution
- - Factoriel
- - Monnaie-syldave
- - Pharmacie
- - Poker
- - Polonaise
- - Regle\_de\_golomb
- - Tetris
- - VIP
+ - [Anagramme](python/anagramme)
+ - [Cache](python/cache)
+ - [Chemin-dico](python/chemin-dico)
+ - [Connexité](python/connexité)
+ - [Dix-plus-grand](python/dix-plus-grand)
+ - [Éxecution](python/execution)
+ - [Factoriel](python/factoriel)
+ - [Monnaie-syldave](python/monnaie-syldave)
+ - [Pharmacie](python/pharmacie)
+ - [Poker](python/poker)
+ - [Polonaise](python/polonaise)
+ - [Regle\_de\_golomb](python/regle_de_golomb)
+ - [Tetris](python/tetris)
+ - [VIP](python/VIP)
 
 Ces exercices sont pour l'instant en C :
 
- - zAddition
- - zBinary
- - zBrace
- - zDownload
- - zIdentificator (Cet exercice est spécial à transcrire) 
- - zMath
- - zParser
- - zReader
- - zStrstat
- - zStrstr
- - zTri
+ - [zAddition](c/zAddition)
+ - [zBinary](c/zBinary)
+ - [zBrace](c/zBrace)
+ - [zDownload](c/zDownload)
+ - [zIdentificator](c/zIdentificator) (Cet exercice est spécial à transcrire) 
+ - [zMath](c/zMath)
+ - [zParser](c/zParser)
+ - [zReader](c/zReader)
+ - [zStrstat](c/zStrstat)
+ - [zStrstr](c/zStrstr)
+ - [zTri](c/zTri)
 
 
 Les tests unitaires
@@ -148,11 +145,10 @@ Les tests unitaires
 
 Les exercices ci-dessus sont retravaillés mais il reste l'écriture des tests unitaires en C, C++ et Python au moins.
 
- - zCorrecteur
- - zDragon
- - zSudoku (Python c'est fait, il reste C et C++)
+ - [zCorrecteur](algo/zCorrecteur)
+ - [zDragon](algo/zDragon)
+ - [zMotscroises](algo/zMotscroises)
+ - [zSudoku](algo/zSudoku) (Python c'est fait, il reste C et C++)
 
 Vous êtes invité à modifier directement ce fichier sinon, je le ferrais 😉
-
-
 
