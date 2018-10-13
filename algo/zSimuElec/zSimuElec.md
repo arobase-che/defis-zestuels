@@ -153,3 +153,105 @@ Cet algorithme est le suivant :
 
 **Exercice (difficile) :** Écrire un programme qui, à partir d'une matrice d'incidence donnée, construit une matrice de B - N + 1 mailles indépendantes.
 
+## Partie 5 : Résolution du circuit
+
+Pour résoudre le circuit, nous allons avoir besoin d'utiliser les résistances et les tensions dans les branches. On les présente sous forme de matrices ou de vecteurs, qui seront ensuite utilisés pour la résolution de systèmes d'équation présentés sous forme de matrices.
+
+La matrice des résistances de branche est une matrice diagonale, comportant B lignes et B colonnes, dont le coefficient b représente la résistance de la branche b.
+
+La matrice ci-dessous est la matrice de résistance de branches du circuit d'exemple.
+
+
+```
+      a      b        c       d       e        f      g       h      i       j
+		 
+a   500      0        0       0       0        0      0       0      0       0
+b     0      0        0       0       0        0      0       0      0       0
+c     0      0     1000       0       0        0      0       0      0       0
+d     0      0        0    5000       0        0      0       0      0       0
+e     0      0        0       0   10000        0      0       0      0       0
+f     0      0        0       0       0    20000      0       0      0       0
+g     0      0        0       0       0        0   1000       0      0       0
+h     0      0        0       0       0        0      0   10000      0       0
+i     0      0        0       0       0        0      0       0   2000       0
+j     0      0        0       0       0        0      0       0      0   10000
+```
+
+**Exercice (facile) :**  Écrire un programme qui donne la matrice des résistances de branche d'un circuit à partir de sa *netlist*.
+
+En plus de la matrice des résistances de branche, nous aurons besoin du vecteur des tensions de branches. Il s'agit d'un vecteur de taille B, dont le coefficient b coefficient correspond à la tension dans la branche b.
+
+Le vecteur ci-dessous est le vecteur des tensions de branche du circuit d'exemple.
+
+```
+a     0
+b    50
+c     0
+d     0
+e     0
+f     0
+g     0
+h     0
+i     0
+j     0
+```
+
+**Exercice (facile) :** Écrire un programme qui donne le vecteur des tensions de branche d'un circuit à partir de sa *netlist*.
+
+Etant donné une matrice de résistances de branches R et une matrice de N - B + 1 mailles indépendantes, on calcule la matrice de résistances de maille correspondante Rm
+
+R_m = B Z B'
+
+où B' est la transposée de la matrice de maille B.
+
+```
+[TODO: ex]
+```
+
+**Exercice (facile) :** Écrire un programme qui donne la matrice des résistances de maille d'un circuit à partir de sa matrice de résistances de branche et d'une matrice de mailles indépendantes.
+
+Avec la même matrice de mailles B, on peut obtenir un vecteur des tensions de mailles Em à partir du vecteur des tensions de branche.
+
+Em = -B E
+
+```
+[TODO: ex]
+```
+
+
+**Exercice (facile) :** Écrire un programme qui donne un vecteur des tensions de maille Em d'un graphe à partir d'une matrice de mailles indépendantes et du vecteur des tensions de branche.
+
+Enfin, vous pouvez obtenir ce qu'on appelle le vecteur des courants de maille à partir du vecteur des tensions de maille et de la matrice des résistances de maille en résolvant le système suivant :
+
+Rm Im = Em
+
+Il s'agit en fait d'une forme alternative de la loi d'Ohm, exprimée en terme de mailles plutôt que de branches comme on le fait quand on travaille à la main.
+
+```
+[TODO: ex]
+```
+
+
+**Exercice (moyen) :** Écrire un programme qui donne le vecteur des courants de maille à partir du vecteur des tensions de maille et de la matrice des résistances de maille.
+
+Finalement, on peut se ramener aux courants et tensions usuelles (celles qu'on cherche depuis le début) avec les formules suivantes.
+
+I = B' Im
+
+U = E + Z I
+
+```
+[TODO: ex]
+```
+
+**Exercice (facile) :** Écrire un programme donnant les courants et tensions à partir des courants de branches, de la matrice de mailles indépendantes, du vecteur des tensions de branches et de la matrice des résistances de branche (cf. formules ci-dessus).
+
+## Partie 6 : Synthèse
+
+Vous avez tous les éléments pour faire le chemin de la *netlist* jusqu'à la solution du circuit électrique, c'est-à-dire la détermination de tous les courants et toutes les tensions.
+
+```
+[TODO: ex]
+```
+
+**Exercice (moyen) :** Écrire un programme qui donne toutes les tensions et les courants dans un circuit électrique à partir de sa *netlist*.
