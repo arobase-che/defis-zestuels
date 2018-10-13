@@ -200,7 +200,7 @@ j     0
 
 Etant donné une matrice de résistances de branches R et une matrice de N - B + 1 mailles indépendantes, on calcule la matrice de résistances de maille correspondante Rm
 
-R_m = B Z B'
+Rm = B Z B'
 
 où B' est la transposée de la matrice de maille B.
 
