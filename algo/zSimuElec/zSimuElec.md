@@ -31,7 +31,6 @@ Les *netlists* de ce problème sont fournies sous forme de fichiers texte. Chaqu
 
 ```
 <no_noeud_départ>; <no_noeud_arrivée>; <tension>; <résistance>
-...
 ```
 
 À titre d'exemple, voici la *netlist* du circuit de la partie 1.
