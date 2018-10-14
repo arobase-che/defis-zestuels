@@ -41,7 +41,7 @@ Les *netlists* de ce problème sont fournies sous forme de fichiers texte. Chaqu
 2;3;0;1000
 3;6;0;5000
 3;5;0;1000
-4;5;0;20000
+5;4;0;20000
 6;4;0;1000
 0;3;0;10000
 0;6;0;2000
