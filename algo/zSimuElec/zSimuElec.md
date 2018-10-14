@@ -247,7 +247,10 @@ Rm Im = Em
 Il s'agit en fait d'une forme alternative de la loi d'Ohm, exprimée en terme de mailles plutôt que de branches comme on le fait quand on travaille à la main.
 
 ```
-[TODO: ex]
+Maille α   0.00869558
+Maille β   0.00081427
+Maille γ  -0.00382857
+Maille δ  -0.00801421
 ```
 
 
