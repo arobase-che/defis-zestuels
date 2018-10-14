@@ -133,7 +133,7 @@ Maille δ   +1    0   +1    0   +1   -1    0    0    0   +1
 
 ```
 
-Aucune des mailles de la matrice ci-dessus ne peuvent pas être obtenues par combinaison linéaire des autres mailles : on dit que les mailles sont indépendantes.
+Aucune des mailles de la matrice ci-dessus ne peuvent pas être obtenues par combinaison linéaire des autres mailles : on dit que les mailles sont indépendantes. On peut déterminer cette indépendance en raisonnant sur le rang de la matrice.
 
 **Exercice (moyen) :** Écrire un programme qui, à partir d'une matrice de mailles donnée, indique s'il s'agit de mailles indépendantes ou non.
 
@@ -151,6 +151,17 @@ Cet algorithme est le suivant :
 ![Arbre couvrant et mailles indépendantes du circuit d'exemple](arbre_couvrant_circuit_1.png)
 
 **Exercice (difficile) :** Écrire un programme qui, à partir d'une matrice d'incidence donnée, construit une matrice de B - N + 1 mailles indépendantes.
+
+Voilà un exemple de mailles obtenues par un tel algorithme. Les exemples se feront avec celles-ci.
+
+```
+            a    b    c    d    e    f    g    h    i    j
+			
+Maille α    1   -1    1    0    0    0    0   -1    0    0 
+Maille β    0    1    0    0    1    1    0    1    0    1
+Maille γ    0    1    0    1    0    0    1    1    0    1
+Maille δ    0    0    0   -1    0    0    0   -1    1    0
+ ```
 
 ## Partie 5 : Résolution du circuit
 
@@ -197,14 +208,20 @@ j     0
 
 **Exercice (facile) :** Écrire un programme qui donne le vecteur des tensions de branche d'un circuit à partir de sa *netlist*.
 
-Etant donné une matrice de résistances de branches R et une matrice de N - B + 1 mailles indépendantes, on calcule la matrice de résistances de maille correspondante Rm
+Etant donné une matrice de résistances de branches R et une matrice de N - B + 1 mailles indépendantes, on calcule la matrice de résistances de maille correspondante Rm :
 
 Rm = B Z B'
 
 où B' est la transposée de la matrice de maille B.
 
+Voilà ce qu'on obtient pour le circuit d'exemple
+
 ```
-[TODO: ex]
+               α       β       γ       δ
+Maille α   11500  -10000  -10000   10000
+Maille β  -10000   41000   20000  -10000
+Maille γ  -10000   20000   26000  -15000
+Maille δ   10000  -10000  -15000   17000
 ```
 
 **Exercice (facile) :** Écrire un programme qui donne la matrice des résistances de maille d'un circuit à partir de sa matrice de résistances de branche et d'une matrice de mailles indépendantes.
@@ -214,7 +231,10 @@ Avec la même matrice de mailles B, on peut obtenir un vecteur des tensions de m
 Em = -B E
 
 ```
-[TODO: ex]
+Maille α  50
+Maille β -50
+Maille γ -50
+Maille δ   0
 ```
 
 
@@ -239,9 +259,6 @@ I = B' Im
 
 U = E + Z I
 
-```
-[TODO: ex]
-```
 
 **Exercice (facile) :** Écrire un programme donnant les courants et tensions à partir des courants de branches, de la matrice de mailles indépendantes, du vecteur des tensions de branches et de la matrice des résistances de branche (cf. formules ci-dessus).
 
@@ -249,8 +266,34 @@ U = E + Z I
 
 Vous avez tous les éléments pour faire le chemin de la *netlist* jusqu'à la solution du circuit électrique, c'est-à-dire la détermination de tous les courants et toutes les tensions.
 
+Voilà ce qu'on obtient pour le circuit d'exemple pour I :
+
 ```
-[TODO: ex]
+a    0.00869558
+b   -0.01170988 
+c    0.00869558
+d    0.00418564
+e    0.00081427
+f    0.00081427
+g   -0.00382857
+h   -0.00369566
+i   -0.00801421
+j   -0.0030143
+```
+
+et pour U :
+
+```
+a     4.34778756
+b    50.00000000
+c     8.69557513
+d    20.92821322 
+e     0.81426875
+f    16.28537506 
+g    -3.82856940
+h   -36.95663731
+i   -16.02842409
+j   -30.14300650
 ```
 
 **Exercice (moyen) :** Écrire un programme qui donne toutes les tensions et les courants dans un circuit électrique à partir de sa *netlist*.
