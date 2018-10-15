@@ -128,7 +128,6 @@ Ces exercices sont pour l'instant en C :
 
  - [zAddition](c/zAddition)
  - [zBinary](c/zBinary)
- - [zBrace](c/zBrace)
  - [zDownload](c/zDownload)
  - [zIdentificator](c/zIdentificator) (Cet exercice est spécial à transcrire) 
  - [zMath](c/zMath)
