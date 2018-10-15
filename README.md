@@ -46,3 +46,15 @@ Les défis comportent des tests unitaires permettant de valider une solution. Vo
 - [regle_de_golomb](python/regle_de_golomb/regle_de_golomb.md)
 - [tetris](python/tetris/tetris.md)
 - [VIP](python/VIP/VIP.md)
+
+
+Contributeurs
+--------
+
+Ici est la liste des contributeurs.
+
+ - [Arnaud-D](https://github.com/Arnaud-D)
+ - [yoch](https://github.com/yoch)
+ - [informaticienzero](https://github.com/informaticienzero)
+
+N'hésitez pas à vous ajoutez en contribuant. 😉
