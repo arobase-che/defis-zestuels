@@ -17,6 +17,7 @@ Les défis comportent des tests unitaires permettant de valider une solution. Vo
 - [zLettres](algo/zLettres/zLettres.md) : tiré du jeu télévisé "Des chiffres et des lettres - Le mot le plus long"
 - [zMotscroises](algo/zMotscroises/zMotscroises.md) : créez un logiciel d'aide aux mots croisés
 - [zSudoku](algo/zSudoku/zSudoku.md) : réalisez un solveur de sudokus
+- [zBrace](algo/zBrace/zBrace.md) : vérifiez le bon usage des parenthèses dans des expressions
 
 ## C
 
