@@ -11,8 +11,10 @@ Les défis comportent des tests unitaires permettant de valider une solution. Vo
 
 ## Algorithmique
 
-- [zDragon](algo/zDragon/zDragon.md) : dessinez la courbe du dragon (image fractale)
+- [zChiffres](algo/zChiffres/zChiffres.md) : tiré du jeu télévisé "Des chiffres et des lettres - Le compte est bon"
 - [zCorrecteur](algo/zCorrecteur/zCorrecteur.md) : réalisez un correcteur orthographique
+- [zDragon](algo/zDragon/zDragon.md) : dessinez la courbe du dragon (image fractale)
+- [zLettres](algo/zLettres/zLettres.md) : tiré du jeu télévisé "Des chiffres et des lettres - Le mot le plus long"
 - [zMotscroises](algo/zMotscroises/zMotscroises.md) : créez un logiciel d'aide aux mots croisés
 - [zSudoku](algo/zSudoku/zSudoku.md) : réalisez un solveur de sudokus
 
