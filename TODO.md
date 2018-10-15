@@ -31,7 +31,6 @@ L'import des exercices
   - [zGame](http://fr.openclassrooms.com/forum/sujet/exercices-pour-debutants-en-c-16443?page=15#message-3334599) : résoudre des multiplications le plus vite possible.
   - [zStrstat](http://fr.openclassrooms.com/forum/sujet/exercices-pour-debutants-en-c-16443?page=21#message-3526460) : chaînes de caractères.
   - [zStrsearch](http://fr.openclassrooms.com/forum/sujet/exercices-pour-debutants-en-c-16443?page=25#message-3643610) : chaînes de caractères.
-  - [zBrace](http://fr.openclassrooms.com/forum/sujet/exercices-pour-debutants-en-c-16443?page=27#message-3793928) : algorithmique, expressions parenthésées.
   - [zGrep](http://fr.openclassrooms.com/forum/sujet/exercices-pour-debutants-en-c-16443?page=30#message-3951095) : récupération des paramètres du main, algo sur les chaînes, manipulation de fichier, analyse séquentielle.
   - [zSommeChiffres](http://fr.openclassrooms.com/forum/sujet/exercices-pour-debutants-en-c-16443?page=45#message-4568956) :  Calculer la somme des chiffres d'un nombre donné. Compter le nombre de fois où une somme est présente dans un intervalle donné.
   - [zLCD](http://fr.openclassrooms.com/forum/sujet/exercices-pour-debutants-en-c-16443?page=53#message-4718325) : simulation d'un afficheur 7 segments.
