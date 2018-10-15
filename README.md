@@ -19,6 +19,7 @@ Les défis comportent des tests unitaires permettant de valider une solution. Vo
 - [zRomains](algo/zRomains/zRomains.md) : conversion de et vers les chiffres romains
 - [zSudoku](algo/zSudoku/zSudoku.md) : réalisez un solveur de sudokus
 - [zBrace](algo/zBrace/zBrace.md) : vérifiez le bon usage des parenthèses dans des expressions
+- [zSimuElec](algo/zSimuElec/zSimuElec.md) : programmez un simulateur de circuits électriques
 
 ## C
 
