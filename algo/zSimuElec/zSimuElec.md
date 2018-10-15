@@ -1,0 +1,304 @@
+# Simulateur de circuits électriques
+
+Thèmes: théorie des graphes, algèbre linéaire.
+
+Les logiciels de simulation de circuits électriques permettent de déterminer les valeurs des tensions et courants dans un circuit sans avoir à faire de calculs laborieux. C'est très pratique !
+
+**Ce problème a pour but de vous entraîner à la manipulation de graphes et de matrices en vous guidant dans la réalisation d'un petit simulateur de circuits électriques.**
+
+## Partie 1 : Premiers pas
+
+Un circuit électrique est constitué de composants connectés entre eux. Tout au long de l'exercice, nous nous limiterons aux circuits comportant uniquement deux types de composants : les générateurs et les résistances. Un exemple de tel circuit est présenté ci-dessous.
+
+![Exemple de circuit électrique.](circuit_1.png)
+
+Les circuits électriques peuvent être représentés par des graphes *orientés*, dans lesquels les branches représentent les composants et les nœuds représentent les connexions entre eux. L'orientation des branches est essentielle pour déterminer le sens du courant à travers le composant : si le courant est positif, il circule dans le sens de la branche, s'il est négatif, il circule dans le sens inverse.
+
+![Graphe correspondant au circuit électrique.](graphe_circuit_1.png)
+
+Dans notre modèle simplifié, une branche est toujours modélisable par un générateur et une résistance en série. En jouant sur les paramètres, on peut ensuite éliminer le générateur (tension nulle) ou la résistance (résistance nulle). Une branche est ainsi représentée par la donnée d'un noeud de départ, d'un noeud d'arrivée, d'une résistance et d'une tension de générateur.
+
+Voici quelques exemples :
+
+* la branche a est définie par le noeud de départ 1, le noeud d'arrivée 2, la résistance 0.5 kΩ, et la tension 0 V ;
+* la branche b est définie par le noeud de départ 1, le noeud d'arrivée 0, la résistance 0 Ω et la tension 50 V.
+
+Dans ce formalisme, un circuit n'est rien d'autre qu'une liste de branches ainsi définies. Dans le jargon des logiciels de simulation, on parle de *netlist*.
+
+## Partie 2 : Manipulation de *netlists*
+
+Les *netlists* de ce problème sont fournies sous forme de fichiers texte. Chaque ligne représente une branche et est constituée du noeud de départ, du noeud d'arrivée, de la tension et de la résistance, séparés par des  points-virgules. Les noeuds de départ et d'arrivée sont des entiers. Les tensions et les résistances sont des nombres à virgule. La structure de chaque ligne est donc la suivante :
+
+```
+<no_noeud_départ>; <no_noeud_arrivée>; <tension>; <résistance>
+```
+
+À titre d'exemple, voici la *netlist* du circuit de la partie 1.
+
+```
+1;2;0;500
+1;0;50;0
+2;3;0;1000
+3;6;0;5000
+3;5;0;1000
+5;4;0;20000
+6;4;0;1000
+0;3;0;10000
+0;6;0;2000
+4;1;0;10000
+```
+
+**Exercice (facile) :** Écrire un programme qui lit une *netlist* et donne :
+
+* le nombre de branches,
+* le nombre de générateurs (tension non nulle),
+* le nombre de résistances (résistance non nulle),
+* le nombre de nœuds.
+
+## Partie 3 : Matrice d'incidence et matrice d'incidence réduite
+
+Bien qu'une *netlist* soit une description complète d'un circuit électrique, elle ne nous sera pas très utile telle quelle pour déterminer les courants et tensions dans le circuit. Nous aurons notamment besoin d'une *matrice d'incidence*. Pour un circuit comportant N nœuds et B branches, cette matrice comporte N lignes et B colonnes : chaque ligne correspond donc à un nœud et chaque colonne à une branche. Le coefficient de la ligne n et de la conne b vaut :
+
+* +1, si la branche b arrive sur le nœud n,
+* -1, si la branche b part du nœud n,
+*  0, si la branche b n'arrive ni part du nœud n.
+
+Une matrice d'incidence contient toute la topologie du graphe, c'est-à-dire la manière dont sont connectées les branches, sans s'intéresser aux composants. Elle peut être utilisée pour écrire les lois des nœuds du circuit, qui font partie des équations nécessaires à sa résolution ; nous en reparlerons plus loin.
+
+La matrice d'incidence du circuit de la partie 1 est montrée ci-dessous.
+
+```
+           a    b    c    d    e    f    g    h    i    j
+		  
+Noeud 0    0   +1    0    0    0    0    0   -1   -1    0
+Noeud 1   -1   -1    0    0    0    0    0    0    0   +1
+Noeud 2   +1    0   -1    0    0    0    0    0    0    0
+Noeud 3    0    0   +1   -1   -1    0    0   +1    0    0
+Noeud 4    0    0    0    0    0   -1   +1    0    0   -1
+Noeud 5    0    0    0    0   +1   +1    0    0    0    0
+Noeud 6    0    0    0   +1    0    0   -1    0   +1    0
+```
+
+**Exercice (facile) :** Écrire un programme lisant une *netlist* et donnant la matrice d'incidence correspondante.
+
+Dans la suite du problème, nous aurons besoin de calculer des *matrices d'incidence réduites*. Pour une matrice d'incidence et un nœud donné, on obtient la matrice d'incidence réduite associée en enlevant la ligne correspondant à ce nœud, tout simplement.
+
+La matrice d'incidence réduite est liée à la notion de référence de potentiel du circuit électrique : le nœud retiré de la matrice d'incidence correspondra à la masse.
+
+Voici la matrice d'incidence réduite du circuit d'exemple pour le nœud 0.
+
+```
+           a    b    c    d    e    f    g    h    i    j
+		  
+Noeud 1   -1   -1    0    0    0    0    0    0    0   +1
+Noeud 2   +1    0   -1    0    0    0    0    0    0    0
+Noeud 3    0    0   +1   -1   -1    0    0   +1    0    0
+Noeud 4    0    0    0    0    0   -1   +1    0    0   -1
+Noeud 5    0    0    0    0   +1   +1    0    0    0    0
+Noeud 6    0    0    0   +1    0    0   -1    0   +1    0
+```
+
+**Exercice (facile) :** Écrire un programme prenant pour argument une matrice d'incidence et un nœud et retournant la matrice d'incidence réduite correspondante.
+
+## Partie 4 : Matrices de mailles et mailles indépendantes
+
+En plus de la matrice d'incidence, nous aurons besoin d'une *matrice de mailles indépendantes* pour la résolution du circuit. Avant de parler de matrices cependant, il nous faut parler de mailles et surtout de mailles indépendantes.
+
+Dans un circuit électrique, une maille est une boucle orientée qui part d'un noeud et revient sur ce même nœud sans passer deux fois par la même branche. Cette notion est analogue à la notion de cycle élémentaire de la théorie des graphes. Ainsi, trouver une maille dans un circuit est équivalent à trouver un cycle élémentaire dans le graphe du circuit.
+
+La figure ci-dessous montre différentes mailles du circuit d'exemple.
+
+![Maille du circuit d'exemple](mailles_circuit_1.png)
+
+Une maille peut par exemple être représentée par une liste de branches, formant un sous-ensemble des branches du circuit complet.
+
+**Exercice (moyen) :** Écrire un programme qui détermine si une liste de branche forme une maille d'un circuit donné. Le circuit et la branche peuvent par exemple être donnés sous forme de *netlist*.
+
+Une représentation des mailles plus utile pour le calcul qu'une simple liste est ce qu'on appelle *une matrice de mailles*, car elle permet d'écrire les lois des mailles du circuit, qui font partie des lois fondamentales des circuits électriques. Une matrice de maille est consistuée de M lignes, qui représentent autant de mailles, et de B colonnes, B étant le nombre total de branche du circuit. Pour une maille α et une branche b, le coefficient à la ligne et la colonne correspondantes vaudra :
+
+*  0 si la maille ne contient pas la branche,
+* +1 si la maille suit la branche dans le même sens,
+* -1 si la maille suit la branche dans le sens opposé.
+
+Voici un exemple de matrice de mailles pour le circuit d'exemple, à partir des mailles montrée dans la figure vue plus tôt.
+
+
+```
+            a    b    c    d    e    f    g    h    i    j
+		  
+Maille α   -1   +1   -1    0    0    0    0   +1    0    0
+Maille β    0    0    0   +1    0    0    0   +1   -1    0
+Maille γ   -1    0   -1   -1    0    0   -1    0    0   -1
+Maille δ   +1    0   +1    0   +1   -1    0    0    0   +1
+
+```
+
+Aucune des mailles de la matrice ci-dessus ne peuvent pas être obtenues par combinaison linéaire des autres mailles : on dit que les mailles sont indépendantes. On peut déterminer cette indépendance en raisonnant sur le rang de la matrice.
+
+**Exercice (moyen) :** Écrire un programme qui, à partir d'une matrice de mailles donnée, indique s'il s'agit de mailles indépendantes ou non.
+
+Pour déterminer tous les courants et toutes les tensions dans le circuit, il nous faudra suffisamment d'équations indépendantes, dont une partie seront des lois des mailles. Ainsi, il est important de trouver un système de mailles indépendantes tel qu'il ne soit pas possible d'ajouter de mailles sans que les mailles du système deviennent dépendantes.
+
+Il est possible de montrer que dans un circuit avec N nœuds et B branches, un système de mailles indépendantes aura au plus B - N + 1 mailles, qu'il est possible de trouver de manière systématique à l'aide d'un algorithme qui travaille sur le graphe du circuit.
+
+Cet algorithme est le suivant :
+
+* choisir un nœud arbitrairement dans le graphe du circuit ;
+* effectuer un parcours en profondeur du graphe afin de construire un *arbre couvrant* (c'est-à-dire un arbre contenant tous les nœuds du graphe) ;
+* prendre une branche qui n'est pas dans l'arbre (un *chaînon*)  et l'ajouter à l'arbre couvrant, puis identifier la maille ainsi créée ;
+* recommencer pour tous les autres chaînons afin d'identifier toutes les mailles.
+
+En partant du noeud 0, on obtient le résultat du schéma ci-dessous.
+
+![Arbre couvrant et mailles indépendantes du circuit d'exemple.](arbre_couvrant_circuit_1.png)
+
+**Exercice (difficile) :** Écrire un programme qui, à partir d'une matrice d'incidence donnée, construit une matrice de B - N + 1 mailles indépendantes.
+
+Voilà un exemple de mailles obtenues par un tel algorithme à partir du noeud 3. Les exemples se feront avec celles-ci.
+
+```
+            a    b    c    d    e    f    g    h    i    j
+			
+Maille α    1   -1    1    0    0    0    0   -1    0    0 
+Maille β    0    1    0    0    1    1    0    1    0    1
+Maille γ    0    1    0    1    0    0    1    1    0    1
+Maille δ    0    0    0   -1    0    0    0   -1    1    0
+ ```
+
+## Partie 5 : Résolution du circuit
+
+Pour résoudre le circuit, nous allons avoir besoin d'utiliser les résistances et les tensions dans les branches. On les présente sous forme de matrices ou de vecteurs, qui seront ensuite utilisés pour la résolution de systèmes d'équation présentés sous forme de matrices.
+
+La matrice des résistances de branche est une matrice diagonale, comportant B lignes et B colonnes, dont le coefficient b représente la résistance de la branche b.
+
+La matrice ci-dessous est la matrice de résistance de branches du circuit d'exemple.
+
+
+```
+      a      b        c       d       e        f      g       h      i       j
+		 
+a   500      0        0       0       0        0      0       0      0       0
+b     0      0        0       0       0        0      0       0      0       0
+c     0      0     1000       0       0        0      0       0      0       0
+d     0      0        0    5000       0        0      0       0      0       0
+e     0      0        0       0   10000        0      0       0      0       0
+f     0      0        0       0       0    20000      0       0      0       0
+g     0      0        0       0       0        0   1000       0      0       0
+h     0      0        0       0       0        0      0   10000      0       0
+i     0      0        0       0       0        0      0       0   2000       0
+j     0      0        0       0       0        0      0       0      0   10000
+```
+
+**Exercice (facile) :**  Écrire un programme qui donne la matrice des résistances de branche d'un circuit à partir de sa *netlist*.
+
+En plus de la matrice des résistances de branche, nous aurons besoin du vecteur des tensions de branches. Il s'agit d'un vecteur de taille B, dont le coefficient b coefficient correspond à la tension dans la branche b.
+
+Le vecteur ci-dessous est le vecteur des tensions de branche du circuit d'exemple.
+
+```
+a     0
+b    50
+c     0
+d     0
+e     0
+f     0
+g     0
+h     0
+i     0
+j     0
+```
+
+**Exercice (facile) :** Écrire un programme qui donne le vecteur des tensions de branche d'un circuit à partir de sa *netlist*.
+
+Etant donné une matrice de résistances de branches R et une matrice de N - B + 1 mailles indépendantes, on calcule la matrice de résistances de maille correspondante Rm :
+
+Rm = B Z B'
+
+où B' est la transposée de la matrice de maille B.
+
+Voilà ce qu'on obtient pour le circuit d'exemple
+
+```
+               α       β       γ       δ
+Maille α   11500  -10000  -10000   10000
+Maille β  -10000   41000   20000  -10000
+Maille γ  -10000   20000   26000  -15000
+Maille δ   10000  -10000  -15000   17000
+```
+
+**Exercice (facile) :** Écrire un programme qui donne la matrice des résistances de maille d'un circuit à partir de sa matrice de résistances de branche et d'une matrice de mailles indépendantes.
+
+Avec la même matrice de mailles B, on peut obtenir un vecteur des tensions de mailles Em à partir du vecteur des tensions de branche.
+
+Em = -B E
+
+```
+Maille α  50
+Maille β -50
+Maille γ -50
+Maille δ   0
+```
+
+
+**Exercice (facile) :** Écrire un programme qui donne un vecteur des tensions de maille Em d'un graphe à partir d'une matrice de mailles indépendantes et du vecteur des tensions de branche.
+
+Enfin, vous pouvez obtenir ce qu'on appelle le vecteur des courants de maille à partir du vecteur des tensions de maille et de la matrice des résistances de maille en résolvant le système suivant :
+
+Rm Im = Em
+
+Il s'agit en fait d'une forme alternative de la loi d'Ohm, exprimée en terme de mailles plutôt que de branches comme on le fait quand on travaille à la main.
+
+```
+Maille α   0.00869558
+Maille β   0.00081427
+Maille γ  -0.00382857
+Maille δ  -0.00801421
+```
+
+
+**Exercice (moyen) :** Écrire un programme qui donne le vecteur des courants de maille à partir du vecteur des tensions de maille et de la matrice des résistances de maille.
+
+Finalement, on peut se ramener aux courants et tensions usuelles (celles qu'on cherche depuis le début) avec les formules suivantes.
+
+I = B' Im
+
+U = E + Z I
+
+
+**Exercice (facile) :** Écrire un programme donnant les courants et tensions à partir des courants de branches, de la matrice de mailles indépendantes, du vecteur des tensions de branches et de la matrice des résistances de branche (cf. formules ci-dessus).
+
+## Partie 6 : Synthèse
+
+Vous avez tous les éléments pour faire le chemin de la *netlist* jusqu'à la solution du circuit électrique, c'est-à-dire la détermination de tous les courants et toutes les tensions.
+
+Voilà ce qu'on obtient pour le circuit d'exemple pour I :
+
+```
+a    0.00869558
+b   -0.01170988 
+c    0.00869558
+d    0.00418564
+e    0.00081427
+f    0.00081427
+g   -0.00382857
+h   -0.00369566
+i   -0.00801421
+j   -0.0030143
+```
+
+et pour U :
+
+```
+a     4.34778756
+b    50.00000000
+c     8.69557513
+d    20.92821322 
+e     0.81426875
+f    16.28537506 
+g    -3.82856940
+h   -36.95663731
+i   -16.02842409
+j   -30.14300650
+```
+
+**Exercice (moyen) :** Écrire un programme qui donne toutes les tensions et les courants dans un circuit électrique à partir de sa *netlist*.
