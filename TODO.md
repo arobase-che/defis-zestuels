@@ -22,7 +22,6 @@ L'import des exercices
   - [[Défi #4 : faisons une vraie calculette]](http://fr.openclassrooms.com/forum/sujet/fait-defis-4-faisons-une-vraie-calculette-88111) : faire un petit parseur permettant d'évaluer une expression arithmétique, avec possibilité d'ajouter les variables, les fonctions, voire faire un vrai petit langage.
   - [[Défi #5 : un chronomètre]](http://fr.openclassrooms.com/forum/sujet/fait-defis-5-un-chronometre-77081) : comme son nom l'indique, faire un bête chronomètre.
   - [[Défi #8 : tout en base 64]](http://fr.openclassrooms.com/forum/sujet/defis-8-tout-en-base64-19054?page=1) : Base64 est un codage permet de représenter une suite de bit quelconque avec seulement 65 caractères, le but est donc de l'implémenter.
-  - [[Défi #9 : la recherche en génétique]](http://fr.openclassrooms.com/forum/sujet/fait-defis-9-la-recherche-en-genetique-17658) : coder un programme capable de retrouver une sous-chaîne dans un texte.
   - [[Défi #12 : zdessin]](http://fr.openclassrooms.com/forum/sujet/defis-12-zdessin-30177) : créer son propre format de .bmp avec une petite bibliothèque pour le manipuler.
   - [zReader](http://fr.openclassrooms.com/forum/sujet/exercices-pour-debutants-en-c-16443#message-3053268) : manipuler les fichiers.
   - [zTri](http://fr.openclassrooms.com/forum/sujet/exercices-pour-debutants-en-c-16443?page=6#message-3105977) : récupération des secondes système, comparatif de tris.
