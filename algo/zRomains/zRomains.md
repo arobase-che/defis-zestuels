@@ -1,5 +1,9 @@
 # Chiffres romains
 
+Auteur: [Nanoc](https://openclassrooms.com/fr/membres/nanoc-64301)  
+[Source](https://openclassrooms.com/forum/sujet/exercices-venez-vous-entrainer-41065?page=32#message-3438816)
+
+
 Vous connaissez certainement les chiffres romains et vous savez certainement que lorsqu'on n'a pas l'habitude de les utiliser, lire ou écrire un de ces nombres peut être fastidieux. 
 
 L'exerice de ce mois va justement résoudre ce problème en vous permettant de réaliser un traducteur chiffres arabes <-> chiffres romains.

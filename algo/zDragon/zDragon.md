@@ -1,5 +1,7 @@
 # Dessinez la courbe du dragon
 
+Auteur: [yoch](https://zestedesavoir.com/membres/voir/yoch/)  
+[Source](https://openclassrooms.com/forum/sujet/fait-defis-6-dessinez-la-courbe-du-dragon-77056)
 
 ## Les fractales
 
