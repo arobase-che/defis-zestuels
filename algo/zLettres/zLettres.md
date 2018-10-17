@@ -1,5 +1,8 @@
 # ... et des lettres
 
+Auteur: [Nanoc](https://openclassrooms.com/fr/membres/nanoc-64301)  
+[Source](https://openclassrooms.com/forum/sujet/exercices-venez-vous-entrainer-41065?page=24#message-2973867)
+
 ## Introduction
 
 Vous connaissez très certainement le célèbre jeu télévisé "Des chiffres et des lettres". Ce que je vous propose ce mois est de coder un programme qui résoud l'autre partie du jeu, "Le mot le plus long".

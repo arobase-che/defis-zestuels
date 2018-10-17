@@ -1,5 +1,8 @@
 # Solveur de mots croisés
 
+Auteur: [yoch](https://zestedesavoir.com/membres/voir/yoch/)  
+[Source](https://openclassrooms.com/forum/sujet/exercice-solveur-de-mots-croises-80528)
+
 Vous savez certainement jouer aux mots croisés ;) 
 
 Souvenez vous la frustration lorsque on se retrouve bloqués avec un mot vraiment difficile. Nous allons donc utiliser la programmation pour nous aider.

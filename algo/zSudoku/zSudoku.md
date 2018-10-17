@@ -1,12 +1,13 @@
 # Des sudokus en folie !
 
-Salut,
+Auteur: [GuilOooo](https://zestedesavoir.com/membres/voir/GuilOooo/)  
+[Source](https://openclassrooms.com/forum/sujet/fait-defis-3-des-sudokus-en-folie-29452)
 
-Aujourd'hui, nous voyons un exercice archi-classique.
 
 ## Mise en situation
 
 Il n'est plus besoin de présenter le célèbre jeu de Sudoku.
+
 Nous allons créer un programme en console capable de résoudre des grilles de Sudoku, en utilisant des méthodes de plus en plus évoluées.
 
 ## Énoncé

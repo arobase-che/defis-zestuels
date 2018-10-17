@@ -1,5 +1,7 @@
 # Un correcteur orthographique efficace
 
+Auteur: [GuilOooo](https://zestedesavoir.com/membres/voir/GuilOooo/)  
+[Source](https://openclassrooms.com/forum/sujet/fait-defis-7-un-correcteur-orthographique-efficace-94015)
 
 Nous allons programmer un correcteur orthographique. Il existe de nombreuses techniques pour y parvenir, nous en explorerons quelques unes au cours des trois niveaux que cet exercice propose. :)
 
