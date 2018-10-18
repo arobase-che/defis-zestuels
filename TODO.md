@@ -1,21 +1,21 @@
-Le projet de banque d'exercices en est a ses débuts. Le but est pour l'instant d'avoir de la matière afin de créer quelque chose d'utilisable.
+Le projet de banque d'exercices en est à ses débuts. Le but est pour l'instant d'avoir de la matière afin de créer quelque chose d'utilisable.
 
 Les étapes du projet sont les suivantes :
 
-1. Récupérer les énoncés des exercices
-2. Leur attribuer des tests
-3. Étudier le mode de distribution
-4. Mettre en place le mode de distribution
+1. récupérer les énoncés des exercices,
+2. leur attribuer des tests,
+3. étudier le mode de distribution,
+4. mettre en place le mode de distribution.
 
 
-Pour l'instant, voilà une liste de chose à faire !
+Pour l'instant, voilà une liste de chose à faire :
 
-  1) L'import d'exercice
-  2) Le retravaille d'exercice
-  3) Les testes unitaires
+  1) l'import d'exercices,
+  2) le retravail d'exercices,
+  3) les tests unitaires.
 
 L'import des exercices
--------------------
+----------------------
 
   - [[Défi #1 : Chimie pour tous]](http://fr.openclassrooms.com/forum/sujet/fait-defis-1-zmol-la-chimie-pour-tous-73164) : un petit parseur pour calculer la masse molaire d'un groupe d'atomes.
   - [[Défi #2 : le jeu de la vie]](http://fr.openclassrooms.com/forum/sujet/fait-defis-2-le-jeu-de-la-vie-79892) : à l'aide d'une bibliothèque graphique, faire un petit jeu de la vie.
@@ -40,7 +40,7 @@ L'import des exercices
   - [zConvert](http://fr.openclassrooms.com/forum/sujet/exercices-pour-debutants-en-c-suite-31735?page=6#message-5179815) : conversion entier -> chaîne de caractères.
   - [zSpirale](http://fr.openclassrooms.com/forum/sujet/exercices-pour-debutants-en-c-suite-31735?page=7#message-5587869) : boucles, manipulation de tableaux à 2 dimensions et allocation dynamique.
   - [zConjug](http://fr.openclassrooms.com/forum/sujet/exercices-pour-debutants-en-c-suite-31735?page=8#message-5994797) : manipulation de chaînes de caractères.
-  - [Cosway](https://openclassrooms.com/forum/sujet/exercices-venez-vous-entrainer-41065#message-2331744) : recodons la vache GNU/Linux la plus célèbre !
+  - [Cowsay](https://openclassrooms.com/forum/sujet/exercices-venez-vous-entrainer-41065#message-2331744) : recodons la vache GNU/Linux la plus célèbre !
   - [Compression RLE](https://openclassrooms.com/forum/sujet/exercices-venez-vous-entrainer-41065?page=8#message-2559878) : implémentons l'algorithme pour des fichiers textes.
   - [Interpréteur BrainFuck](https://openclassrooms.com/forum/sujet/exercices-venez-vous-entrainer-41065?page=15#message-2688641) : tout est dans le titre.
   - [Fractions](https://openclassrooms.com/forum/sujet/exercices-venez-vous-entrainer-41065?page=24#message-3053616) : créer un type Fraction pour les manipuler plus facilement.
@@ -83,7 +83,6 @@ L'import des exercices
  
 ### Spécifiques Python #
  
- - [Mise en cache de fonctions](https://openclassrooms.com/forum/sujet/exercice-mise-en-cache-des-fonctions-92251#message-6363088) : ne pas recalculer la valeur d'une fonction déjà appelée.
  - [Traçage de l'application](https://openclassrooms.com/forum/sujet/exercice-moyen-avance-tracage-de-l-execution-38393#message-5868647) : afficher tout ce qui se passe lors de l'appel d'une fonction.
  
 ### Exercices similaires / en double --> À fusionner#
@@ -97,10 +96,10 @@ L'import des exercices
  - [CRYPTO 1 : Le chiffre de César](https://openclassrooms.com/forum/sujet/exercices-venez-vous-entrainer-41065?page=28#message-3168261), [CRYPTO 2 : Le chiffre de Vigenère](https://openclassrooms.com/forum/sujet/exercices-venez-vous-entrainer-41065?page=29#message-3242075), [CRYPTO 3 : Cryptage XOR](https://openclassrooms.com/forum/sujet/exercices-venez-vous-entrainer-41065?page=31#message-3337550) et [zCrypt](http://fr.openclassrooms.com/forum/sujet/exercices-pour-debutants-en-c-suite-31735?page=7#message-5500579) peuvent être fusionnés.
 
 
-Les exercices restant à retravailler.
---------------------------------
+Les exercices restant à retravailler
+------------------------------------
 
-C'est à dire qu'il faut les retravailler de manière à ce qu'ils ne dépendent
+C'est-à-dire qu'il faut les retravailler de manière à ce qu'ils ne dépendent
 pas du langage d'origine. 
 
 Ces exercices sont pour l'instant en Python :
@@ -135,14 +134,16 @@ Ces exercices sont pour l'instant en C :
 
 
 Les tests unitaires
----------------
+-------------------
 
-Les exercices ci-dessus sont retravaillés mais il reste l'écriture des tests unitaires en C, C++ et Python au moins.
+Les exercices ci-dessus sont retravaillés, mais il reste l'écriture des tests unitaires en C, C++ et Python au moins.
 
  - [zCorrecteur](algo/zCorrecteur)
  - [zDragon](algo/zDragon)
  - [zMotscroises](algo/zMotscroises)
  - [zSudoku](algo/zSudoku) (Python c'est fait, il reste C et C++)
+ - [zGenetique](algo/zGenetique)
+ - [zBrace](algo/zBrace)
 
-Vous êtes invité à modifier directement ce fichier sinon, je le ferrais 😉
+Vous êtes invités à modifier directement ce fichier sinon, je le ferai. 😉
 
